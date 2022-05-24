@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import {useSelector, useDispatch} from 'react-redux'
-
 import End from "./components/End";
 import Question from "./components/Question";
 import Start from "./components/Start";
@@ -13,8 +12,6 @@ let interval;
 const App = () => {
   const dispatch = useDispatch()
   const {step,answers} = useSelector(state => state?.quizReducer) 
-  console.log(step);
-  console.log(answers);
   const [showModal, setShowModal] = useState(false);
   const [time, setTime] = useState(0);
   useEffect(() => {
@@ -22,16 +19,7 @@ const App = () => {
       clearInterval(interval);
     }
   }, [step]);
-  // TODO:
-  // const handleQuizStart = () => {
-  //   interval = setInterval(() => {
-  //     setTime(prevTime => prevTime + 1);
-  //   }, 1000);
-  // };
-  // const resetClickHandler = () => {
-  //   setTime(0);
-  //   setShowModal(false)
-  // }
+
   return (
     <div className="App">
       {step === 1 && <Start/>}
@@ -42,6 +30,8 @@ const App = () => {
       time={time}
       onAnswersCheck={() => setShowModal(true)}
       />}
+     
+    
     </div>
   );
 };

@@ -8,10 +8,14 @@ const Question = () => {
   const { activeQuestion, answers , time } = useSelector(
     (state) => state?.quizReducer
   );
+
+
   const [data, setData] = useState(quizData?.data[activeQuestion]);
   const [error, setError] = useState("");
   const [selected, setSelected] = useState("");
   const [timer,setTimer] = useState(time)
+
+
   useEffect(() => {
     if(timer > 0 )
     {
@@ -20,24 +24,35 @@ const Question = () => {
       dispatch(timeOut());
     }
   }, [timer]);
+
+
   const radiosWrapper = useRef();
   useEffect(() => {
     setData(quizData?.data[activeQuestion]);
     if (answers[activeQuestion] != undefined) {
       setSelected(answers[activeQuestion].a);
-      console.log("RUn once");
     }
   }, [data, activeQuestion]);
+
+
   const changeHandler = (e) => {
     setSelected(e.target.value);
     if (error) {
       setError("");
     }
   };
+
+
   const handlePrev = () => {
     setError("");
     dispatch(prevQuiz());
   };
+
+  const handleResult = () => {
+    dispatch(timeOut());
+  };
+
+
   const handleNext = (e) => {
     if (selected === "") {
       return setError("Please select one option!");
@@ -59,6 +74,8 @@ const Question = () => {
       findCheckedInput.checked = false;
     }
   };
+
+
   const handleSubmit = () => {
     if (selected === "") {
       return setError("Please select one option!");
@@ -105,15 +122,15 @@ const Question = () => {
         </div>
       </section>
         <section className="questionBottom">
-          {activeQuestion <= 0 ? null : (
-            <button className="button" onClick={handlePrev}>Prev</button>
-          )}
+
+            <button className="button" onClick={ handleResult }>Result</button>
 
           {activeQuestion + 1 >= quizData?.data.length ? (
-            <button className="button nextBtn" onClick={handleSubmit}>Submit</button>
+            <button className="button nextBtn" onClick={ handleSubmit }>Submit</button>
           ) : (
-            <button className="button nextBtn" onClick={handleNext}>Next</button>
+            <button className="button nextBtn" onClick={ handleNext }>Next</button>
           )}
+          
         </section>
     </div>
   );

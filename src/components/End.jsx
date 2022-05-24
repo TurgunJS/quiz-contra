@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { resetQuiz } from "../redux/action/quizAction";
-import { formatTime } from "../utils";
 import quizData from "../data/quiz.json";
 import Modal from "./Modal";
-import Trophy from "../assets/images/trophy.png";
+import Mansur from "../assets/images/rt.png";
 
 const End = () => {
   const dispatch = useDispatch();
   const { answers,time } = useSelector((state) => state.quizReducer);
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [modal, setModal] = useState(false);
+
+
   useEffect(() => {
     let correct = 0;
     answers.forEach((result, index) => {
@@ -23,9 +24,11 @@ const End = () => {
   const handleReset = () => {
     dispatch(resetQuiz());
   };
+
+
   return (
     <div className="endBox">
-      <img src={Trophy} className="trophy" alt="" srcset="" />
+      <img src={Mansur} className="trophy" alt="" srcset="" />
       <h3>Your results</h3>
       <p>
         {correctAnswers} of {quizData?.data.length}

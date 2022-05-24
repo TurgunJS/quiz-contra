@@ -1,9 +1,9 @@
-* {
-  font-family: "Verdana", cursive, sans-serif;
-}
+
 body {
-  background-color: #7cc6fe;
-  /* background-image: url(./assets/images/bg.jpg); */
+  background-color: #978d038f;
+  /*background-image: url(https://economist.kg/wp-content/uploads/2022/05/png_20220520_015512_0000.png);*/
+  background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,13 +21,14 @@ body {
   padding: 20px;
   box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
 }
-/* /////////////////////////////////////////////// */
-/* /////////////////////  start ////////////////// */
-/* //////////////////////////////////////////////// */
+
+/* st*/
+
 .button{
-  background: rgb(131, 5, 189);
+  background: linear-gradient(45deg,rgb(60, 0, 255),green);
   outline: none;
   border: none;
+  font-size: 18px;
   padding: 10px;
   border-radius: 4px;
   font-weight: 300;
@@ -44,7 +45,7 @@ body {
   text-align: center;
 }
 .startButton{
-  background: rgb(131, 5, 189);
+  background: linear-gradient(45deg,rgb(60, 0, 255),green);
   outline: none;
   border: none;
   padding: 10px;
@@ -68,9 +69,9 @@ body {
   -webkit-appearance: none; 
   margin: 0; 
 }
-/* /////////////////////////////////////////////// */
-/* /////////////////////  question ////////////////// */
-/* //////////////////////////////////////////////// */
+
+/* que */
+
 .questionBox{
  position: relative;
  height: 100%;
@@ -103,15 +104,15 @@ body {
 }
 .option .text{
   width: 80%;
-  font-size: 16px;
-  border-radius: 15px;
+  font-size: 20px;
+  border-radius: 6px;
   padding: 5px;
   border: 5px solid #234668;
   cursor: pointer;
   margin-bottom: 8px;
 }
 .option .text:hover{
-  background: #234668;
+  background: #015e17c1;
 }
 .option .text input{
   position: fixed;
@@ -119,10 +120,10 @@ opacity: 0;
 pointer-events: none;
 }
 .selected{
-  background: rgb(131, 5, 189);
+  background: linear-gradient(45deg,rgb(60, 0, 255),green);
   width: 80%;
-  font-size: 16px;
-  border-radius: 15px;
+  font-size: 20px;
+  border-radius: 6px;
   padding: 5px;
   border: 5px solid #234668;
   cursor: pointer;
@@ -137,13 +138,14 @@ pointer-events: none;
   position: absolute;
   bottom: 0;
   width: 100%;
+  margin-left: 300px;
 }
 .nextBtn{
   float: right;
+  margin-right: 600px;
 }
-/* /////////////////////////////////////////////// */
-/* /////////////////////  end ////////////////// */
-/* //////////////////////////////////////////////// */
+/* end */
+
 .endBox{
   align-items: center;
   text-align: center;
@@ -153,9 +155,8 @@ pointer-events: none;
   height: 50px;
 }
 
-/* /////////////////////////////////////////////// */
-/* /////////////////////  modal ////////////////// */
-/* //////////////////////////////////////////////// */
+/* modal */
+
 .modal {
   position: absolute;
   top: 0;
@@ -196,7 +197,7 @@ pointer-events: none;
   padding: 10px;
 }
 .bg-success{
-  background: #48c774;
+  background: #484ec7;
   color: white;
   padding: 10px;
   width: 90%;
@@ -204,7 +205,7 @@ pointer-events: none;
   font-weight: 500;
 }
 .bg-warning{
-  background: #3273dc;
+  background: #0bc008;
   color: white;
   padding: 10px;
   width: 90%;

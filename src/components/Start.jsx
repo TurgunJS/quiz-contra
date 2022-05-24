@@ -2,9 +2,10 @@ import React,{useState} from "react";
 import { useEffect } from "react";
 import { useDispatch , useSelector} from 'react-redux'
 import { startQuiz } from "../redux/action/quizAction";
+import Mansur from "../assets/images/rt.png";
+
 const Start = () => {
   const dispatch = useDispatch()
-  // const {time} = useSelector(state => state.quizReducer)
   const [minute,setMinute] = useState(1)
   const [second ,setSecond] = useState(0)
   const [time,setTime] = useState(60)
@@ -31,12 +32,13 @@ const Start = () => {
     <div className="startBox">
       <div >
         <div >
-          <h1>Start the Quiz</h1>
-          <p>Good luck!</p>
+          <img src={Mansur} className="trophy" alt="" srcset="" />
+          <h1>Start</h1>
+          <p>Codify Test</p>
           <p>Time:&nbsp;&nbsp;{time}sec</p>
           <section>
-            <label htmlFor=""><input type="number" className="timeInput" value={minute} onChange={(e) =>setMinute(parseInt(e.target.value))}  /> min</label>
-            <label htmlFor=""><input type="number" className="timeInput" value={second} onChange={(e) =>setSecond(parseInt(e.target.value))}  /> sec</label>
+            {/* <label htmlFor=""><input type="number" className="timeInput" value={minute} onChange={(e) =>setMinute(parseInt(e.target.value))}  /> min</label>
+            <label htmlFor=""><input type="number" className="timeInput" value={second} onChange={(e) =>setSecond(parseInt(e.target.value))}  /> sec</label> */}
           </section>
           <button className="startButton" onClick={handleQuizStart}>
             START
