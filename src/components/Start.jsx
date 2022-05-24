@@ -34,7 +34,7 @@ const Start = () => {
         <div >
           <img src={Mansur} className="trophy" alt="" srcset="" />
           <h1>Start</h1>
-          <p>Codify Test</p>
+          <p>Codify Test:</p>
           <p>Time:&nbsp;&nbsp;{time}sec</p>
           <section>
             {/* <label htmlFor=""><input type="number" className="timeInput" value={minute} onChange={(e) =>setMinute(parseInt(e.target.value))}  /> min</label>
